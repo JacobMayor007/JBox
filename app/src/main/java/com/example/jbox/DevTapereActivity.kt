@@ -1,0 +1,42 @@
+package com.example.jbox
+
+import android.app.Activity
+import android.content.Intent
+import android.os.Bundle
+import android.widget.ImageView
+import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
+
+class DevTapereActivity : Activity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_dev_tapere)
+        val aikenbutton = findViewById<ImageView>(R.id.aiken)
+        val jacobbutton = findViewById<ImageView>(R.id.tapere)
+        val johannabutton = findViewById<ImageView>(R.id.johanna)
+        val closebutton = findViewById<ImageView>(R.id.close)
+        aikenbutton.setOnClickListener {
+            val intent = Intent(this, DevArtigasActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        jacobbutton.setOnClickListener {
+            val intent = Intent(this, DevTapereActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        johannabutton.setOnClickListener {
+            val intent = Intent(this, DevJohannaActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+        closebutton.setOnClickListener {
+            val intent = Intent(this, DashboardActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+
+    }
+}
